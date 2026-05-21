@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            width:100%;
+           
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(248, 122, 68, 0.5);
+            max-width: 700px;
+            width: 100%;
+         
+            
+        }
+        .label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .checkbox-group{
+            line-height: 1.5;
+
+        }
+        .quote{
+            width:100%;
+            background-color:#FF4800;
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin: 50px 0;
+            
+        }
+        .quote p{
+            padding: 30px;
+        }
+        .form{
+            display: flex;
+            align-items: center;
+            margin: 0px 0px 50px 250px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="quote">
+        <p> Get A Free Quote</p>
+    </div>
+    <div class="form">
+    <form action="#" method="post">
+        <label class="label" for="first-name">First Name</label>
+        <input class="input" type="text" id="first-name" name="first-name" required><br>
+
+        <label class="label" for="last-name">Last Name</label>
+        <input class="input" type="text" id="last-name" name="last-name" required><br>
+
+        <label class="label" for="email">Enter Your Valid Email Address</label>
+        <input class="input" type="email" id="email" name="email" required><br>
+
+        <label class="label" for="help">How we can help you?</label>
+        <textarea id="help" name="help" rows="4" required></textarea><br>
+
+        <label class="label" for="website-url">Website URL</label>
+        <input class="input" type="url" id="website-url" name="website-url"><br>
+
+        <label class="label"  for="budget">How much is your budget range?</label>
+        <input class="input" type="text" id="budget" name="budget" required><br>
+
+        <label class="label" for="package">Select Package</label>
+        <select id="package" name="package" required>
+            <option value="Basic">Basic</option>
+            <option value="premium">premium</option>
+            <option value="Bussiness">Business</option>
+        </select><br>
+
+        <label>Interested Services</label><br>
+        <div class="checkbox-group">
+            <br>
+            <input type="checkbox" id="website-design" name="services[]" value="Website Design & Development">
+            <label for="website-design">International Courier Service</label><br>
+
+            <input type="checkbox" id="wordpress-website" name="services[]" value="WordPress Website">
+            <label for="wordpress-website">Express Parcel Service</label><br>
+
+            <input type="checkbox" id="digital-marketing" name="services[]" value="Digital Marketing">
+            <label for="digital-marketing">Shipping Agent Service</label><br>
+
+            <input type="checkbox" id="seo" name="services[]" value="SEO">
+            <label for="seo">Local Transport Service</label><br>
+
+            <input type="checkbox" id="sem" name="services[]" value="SEM (Ad PPC)">
+            <label for="sem">Cargo transportation Service</label><br>
+
+            <input type="checkbox" id="others" name="services[]" value="Others">
+            <label for="others">Others</label><br>
+        </div>
+        <br>
+        <button id="myButton" class="btn btn-primary py-3 px-4" type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+
+
+
+
+</html>

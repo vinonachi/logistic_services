@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.tracking-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tracking-status {
+    text-align: center;
+}
+
+.status {
+    color: blue;
+}
+
+.tracking-details {
+    border-left: 3px solid #000;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+.tracking-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+    margin-right: 10px;
+    position: relative;
+}
+
+.completed .circle {
+    background: green;
+}
+
+.in-transit .circle {
+    background: purple;
+}
+
+.pending .circle {
+    background: white;
+    border: 2px solid purple;
+}
+
+.tracking-info {
+    text-align: left;
+}
+
+.back-button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: darkorange;
+}
+
+</style>
+<body>
+    <div class="tracking-container">
+        <h2>Tracking History</h2>
+        <div class="tracking-status">
+            <h3>Your Order Is <span class="status">In Transit</span></h3>
+            <p>Your Tracking ID: <strong>123456</strong></p>
+            <div class="tracking-details">
+                <div class="tracking-step completed">
+                    <div class="circle"></div>
+                    <div class="tracking-info">
+                        <p><strong>Item Received at dc at Mumbai DC</strong></p>
+                        <p>Location: Mumbai DC 1 Jul, 11:40 PM</p>
+                    </div>
+                </div>
+                <div class="tracking-step completed">
+                    <div class="circle"></div>
+                    <div class="tracking-info">
+                        <p><strong>Item Received at Mumbai DC</strong></p>
+                        <p>Location: Mumbai DC 1 Jul, 2:18 PM</p>
+                    </div>
+                </div>
+                <div class="tracking-step completed">
+                    <div class="circle"></div>
+                    <div class="tracking-info">
+                        <p><strong>Order Received</strong></p>
+                        <p>Location: Tiruvallur 26 Jun, 9:43 PM</p>
+                    </div>
+                </div>
+                <div class="tracking-step in-transit">
+                    <div class="circle"></div>
+                    <div class="tracking-info">
+                        <p><strong>In Transit</strong></p>
+                        <p>Location: Chennai 27 Jun, 10:15 AM</p>
+                    </div>
+                </div>
+                <div class="tracking-step pending">
+                    <div class="circle"></div>
+                    <div class="tracking-info">
+                        <p><strong>Out for Delivery</strong></p>
+                        <p>Location: Bangalore 28 Jun, 11:30 AM</p>
+                    </div>
+                </div>
+            </div>
+            <button class="back-button">Back To Home</button>
+            <p>Expected Arrival: <strong>05/08/2024</strong></p>
+            <p>Tracking ID: <strong>123456</strong></p>
+        </div>
+    </div>
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const statusElement = document.querySelector('.status');
+    const steps = document.querySelectorAll('.tracking-step');
+    const statuses = ['completed', 'completed', 'completed', 'in-transit', 'pending'];
+
+    let currentStep = 0;
+
+    function updateStatus() {
+        if (currentStep < steps.length) {
+            steps[currentStep].classList.remove('completed', 'in-transit', 'pending');
+            steps[currentStep].classList.add(statuses[currentStep]);
+            currentStep++;
+        }
+    }
+
+    setInterval(updateStatus, 5000); // Update every 5 seconds
+});
+
+    </script>
+</body>
+</html>

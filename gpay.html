@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group .card-icons img {
+            width: 30px;
+            margin-right: 5px;
+        }
+        .form-group small {
+            color: red;
+        }
+        .pay-button {
+            background-color: #4285f4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .pay-button:hover {
+            background-color: #357ae8;
+        }
+        .amount {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .terms {
+            font-size: 12px;
+            color: gray;
+            text-align: center;
+        }
+        .terms a {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>G Pay</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Cardholder name</label>
+            <input type="text" id="name" name="name" value="" >
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="" >
+        </div>
+        <div class="form-group">
+            <label for="card-number">Card number</label>
+            <div class="card-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="MasterCard">
+            </div>
+            <input type="text" id="card-number" name="card-number" placeholder="Card number">
+        </div>
+        <div class="form-group">
+            <label for="expiry">Expiry date (MM/YY)</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM / YY">
+        </div>
+        <div class="form-group">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" name="cvc" placeholder="CVC">
+        </div>
+        <div class="form-group">
+            <label for="address">Billing address</label>
+            <input type="text" id="address" name="address" placeholder="Billing address">
+        </div>
+        <div class="form-group">
+            <small>Your payment method won't be charged because you're in a test environment</small>
+        </div>
+        <div class="amount">
+            Pay Example Merchant<br><strong>$49.00</strong>
+        </div>
+        <button type="submit" class="pay-button">PAY</button>
+        <div class="terms">
+            By continuing, you agree to the <a href="#">Google Payments Terms of Service</a>. The <a href="#">Privacy Notice</a> describes how your data is handled.
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

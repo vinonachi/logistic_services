@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace ;
+            font-family:"Poppins", sans-serif;
+            }
+        .tracking-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            animation: fade-in 2s forwards;
+            margin-top:100px;
+        }
+        .tracking-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: slide-up 2s both;
+            animation-delay: 0.5s;
+        }
+        .tracking-container h2 span {
+            color: #007bff;
+            animation: slide-up 2s forwards;
+            animation-delay: 1s;
+        }
+        .text-center{
+            animation: slide-up 2s both;
+            animation-delay: 0.5s;
+            text-align: center;
+
+        }
+
+        .tracking-step {
+            position: relative;
+            padding-left: 40px;
+            padding-bottom: 10px;
+            animation: slide-up 2s forwards;
+            animation-delay: 1.5s;
+        }
+        .tracking-step:last-child {
+            margin-bottom: 0;
+        }
+        .tracking-step::before {
+            content: '\2714';
+            position: absolute;
+            left: 66px;
+            top: 8%;
+            width: 19px;
+            height: 19px;
+            background-color: #28a745;
+            border-radius: 50%;
+            font-size: 14px; 
+            color:white;
+            text-align: center;
+            padding-top:0px;
+            opacity: 0;
+            transform: scale(0);
+            animation: appear-check 2s forwards;
+            animation-delay: 2s;
+        }
+        .tracking-step::after {
+            content: '';
+            position: absolute;
+            left: 74px;
+            top: 24px;
+            width: 3px;
+            height:calc(100% - 2px);
+            background-color: #28a745;
+            height: 0;
+            animation: grow-line 2s forwards;
+            animation-delay: 2.5s;
+        }
+        .tracking-step:last-child::after {
+            display: none;
+        }
+        .tracking-step .location {
+            font-weight: bold;
+            margin-bottom: 5px;
+            animation: fade-in 2s forwards;
+            animation-delay: 2s;
+            text-align: center;
+        }
+        .tracking-step .date-time {
+            color: #6c757d;
+            animation: fade-in 2s forwards;
+            animation-delay: 2.5s;
+            text-align: center;
+        }
+
+        .tracking-step1 {
+            position: relative;
+            padding-left: 40px;
+            padding-bottom: 10px;
+            animation: slide-up 2s forwards;
+            animation-delay: 1.5s;
+        }
+        .tracking-step1:last-child {
+            margin-bottom: 0;
+        }
+        .tracking-step1::before {
+            content: '◉';
+            position: absolute;
+            left: 66px;
+            top: 10%;
+            width: 19.5px;
+            height: 19.5px;
+            background-color:rgb(48, 0, 111);
+            border-radius: 50%;
+            font-size: 15px; 
+            color:white;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom:2px;
+            opacity: 0;
+            transform: scale(0);
+            animation: appear-check 2s forwards;
+            animation-delay: 2s;
+        }
+        .tracking-step1 .location {
+            font-weight: bold;
+            margin-bottom: 5px;
+            animation: fade-in 2s forwards;
+            animation-delay: 2s;
+            text-align: center;
+        }
+        .tracking-step1 .date-time {
+            color: #6c757d;
+            animation: fade-in 2s forwards;
+            animation-delay: 2.5s;
+            text-align: center;
+        }
+        .trace::after {
+            content: '';
+            position: absolute;
+            left: 74px;
+            top: 24px;
+            width: 3px;
+            height:calc(100% - 2px);
+            background-color:black;
+            height: 0;
+            animation: grow-line 2s forwards;
+            animation-delay: 2.5s;
+        }
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slide-up {
+            0% { transform: translateY(20px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes color-change {
+            0% { color: #333; }
+            100% { color: #007bff; }
+        }
+        @keyframes appear-check {
+            0% { opacity: 0; transform: scale(0); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes grow-line {
+            0% { height: 0; }
+            100% { height: 100%; }
+        }
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #757575;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 4px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #FF4800;
+  border-color: #FF4800;
+  text-decoration: none;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+<!--Tracking Start-->
+    <div class="tracking-container">
+        <p> Tracking History</p>
+        <h2>Your Order Is <span>In Transit</span></h2>
+        <p id="trackingIdDisplay" class="text-center font-weight-bold mb-4">Tracking ID: 345123</p>
+        <div class="tracking-step">
+            <div class="location" id="location-1">Item Received at dc at Mumbai DC</div>
+            <div class="date-time" id="datetime-1">Location: Mumbai DC 1 Jul, 11:40 PM</div>
+            <br> 
+        </div>
+        
+        <div class="tracking-step">
+            <div class="location" id="location-2">Item Received at Mumbai DC</div>
+           <div class="date-time" id="datetime-2">Location: Mumbai DC 1 Jul, 2:18 PM</div>
+           <br> 
+        </div>
+        
+        <div class="tracking-step trace">
+            <div class="location" id="location-3">Order Received</div>
+            <div class="date-time" id="datetime-3">Location: Tiruvallur 26 Jun, 9:43 PM</div>
+            <br> 
+        </div>
+        
+        <div class="tracking-step1 trace">
+            <div class="location" id="location-4">In Transit</div>
+            <div class="date-time" id="datetime-4">Location: Chennai 27 Jun, 10:15 AM</div>
+            <br> 
+        </div>
+        
+        <div class="tracking-step1 ">
+            <div class="location" id="location-5">Out for Delivery</div>
+            <div class="date-time" id="datetime-5">Location: Bangalore 28 Jun, 11:30 AM</div>
+            <br> 
+        </div>
+        
+        <div>
+        <a href="index.html" class="btn btn-primary" style="width: 180px;margin-left: 155px;">Back To Home</a>
+</div>
+<br>
+<br>
+<div>
+    <p class="text-lg-left font-weight-medium">Expected Arrival: 05/08/2024</p>
+
+    <p id="trackingIdDisplay" >Tracking ID: 123456</p>
+</div>
+
+
+<!--Tracking end-->
+<script>
+
+function getQueryParameter(name) {
+    return new URL(window.location.href).searchParams.get(name);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const trackingId = getQueryParameter('trackingId');
+    if (trackingId) {
+        document.getElementById('trackingIdDisplay').innerText = `Your Tracking ID: ${trackingId}`;
+    } else {
+        document.getElementById('trackingIdDisplay').innerText = 'No tracking ID provided. check your id';
+    }
+
+    const locations = [
+        document.getElementById('location-1'),
+        document.getElementById('location-2'),
+        document.getElementById('location-3'),
+        document.getElementById('location-4'),
+        document.getElementById('location-5')
+    ];
+
+    const datetimes = [
+        document.getElementById('datetime-1'),
+        document.getElementById('datetime-2'),
+        document.getElementById('datetime-3'),
+        document.getElementById('datetime-4'),
+        document.getElementById('datetime-5')
+    ];
+
+    const randomLocations = [];
+    const randomDates = [];
+    for (let i = 0; i < 5; i++) {
+        randomLocations.push(getRandomLocation());
+        randomDates.push(getRandomDate());
+    }
+
+    for (let i = 0; i < 5; i++) {
+        locations[i].innerText = `Item Received at ${randomLocations[i]}`;
+        datetimes[i].innerText = `Location: ${randomLocations[i]} ${randomDates[i]}`;
+    }
+});
+
+function getRandomDate() {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['jan','feb','mar','apr','may','Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const day = Math.floor(Math.random() * 7);
+    const month = Math.floor(Math.random() * 12);
+    const date = Math.floor(Math.random() * 28) + 1; // generate a random date between 1 and 28
+    const hours = Math.floor(Math.random() * 24);
+    const minutes = Math.floor(Math.random() * 60);
+    return `${days[day]}, ${months[month]} ${date} ${hours}:${minutes} ${hours >= 12 ? 'PM' : 'AM'}`;
+}
+
+function getRandomLocation() {
+    const locations = ['Mumbai DC', 'Tiruvallur','Vellore', 'Chennai', 'Bangalore', 'Hyderabad', 'Pune', 'Delhi'];
+    return locations[Math.floor(Math.random() * locations.length)];
+}   </script>
+</body>
+</html>
